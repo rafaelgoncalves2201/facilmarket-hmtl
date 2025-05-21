@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facil Market - E-commerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-2xl font-bold flex items-center">
+                    <i class="fas fa-fire mr-2 text-orange-500"></i>
+                    <span>Facil<span class="text-orange-500">Market</span></span>
+                </a>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#products" class="hover:text-orange-300 transition">Produtos</a>
+                <a href="service.html" class="hover:text-orange-300 transition">Serviços</a>
+                <a href="about.html" class="hover:text-orange-300 transition">Sobre Nós</a>
+                <a href="vendedor.html" class="bg-orange-600 px-4 py-2 rounded-lg hover:bg-orange-700 transition">Painel do Vendedor</a>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <a href="#" class="hover:text-orange-300">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                </a>
+                <a href="#" class="hover:text-orange-300">
+                    <i class="fas fa-user text-xl"></i>
+                </a>
+                <button class="md:hidden focus:outline-none" id="mobile-menu-button">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-black py-2 px-4" id="mobile-menu">
+            <a href="#products" class="block py-2 hover:text-orange-300 transition">Produtos</a>
+            <a href="service.htm" class="block py-2 hover:text-orange-300 transition">Serviços</a>
+            <a href="about.html" class="block py-2 hover:text-orange-300 transition">Sobre Nós</a>
+            <a href="vendedor.html" class="block py-2 bg-orange-600 px-4 rounded-lg hover:bg-orange-700 transition">Painel do Vendedor</a>
+        </div>
+    </nav>
+    <!-- Vendor Panel Section -->
+    <section id="vendor" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Painel do Vendedor</h2>
+            
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="flex flex-col md:flex-row">
+                    <!-- Sidebar -->
+                    <div class="sidebar bg-black text-white w-full md:w-64 flex-shrink-0">
+                        <div class="p-4 border-b border-gray-700">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 rounded-full bg-orange-600 flex items-center justify-center">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="ml-3 sidebar-text">
+                                    <div class="font-medium">Vendedor</div>
+                                    <div class="text-xs text-gray-400">Admin</div>
+                                </div>
+                            </div>
+                        </div>
+                        <nav>
+                            <button class="tab-button w-full text-left px-4 py-3 flex items-center hover:bg-gray-800 transition" data-tab="dashboard">
+                                <i class="fas fa-tachometer-alt sidebar-icon mr-3"></i>
+                                <span class="sidebar-text">Dashboard</span>
+                            </button>
+                            <button class="tab-button w-full text-left px-4 py-3 flex items-center hover:bg-gray-800 transition" data-tab="products">
+                                <i class="fas fa-boxes sidebar-icon mr-3"></i>
+                                <span class="sidebar-text">Produtos</span>
+                            </button>
+                            <button class="tab-button w-full text-left px-4 py-3 flex items-center hover:bg-gray-800 transition" data-tab="services">
+                                <i class="fas fa-concierge-bell sidebar-icon mr-3"></i>
+                                <span class="sidebar-text">Serviços</span>
+                            </button>
+                            <button class="tab-button w-full text-left px-4 py-3 flex items-center hover:bg-gray-800 transition" data-tab="orders">
+                                <i class="fas fa-shopping-bag sidebar-icon mr-3"></i>
+                                <span class="sidebar-text">Pedidos</span>
+                            </button>
+                            <button class="tab-button w-full text-left px-4 py-3 flex items-center hover:bg-gray-800 transition" data-tab="settings">
+                                <i class="fas fa-cog sidebar-icon mr-3"></i>
+                                <span class="sidebar-text">Configurações</span>
+                            </button>
+                        </nav>
+                        <div class="p-4 border-t border-gray-700 mt-auto">
+                            <button class="w-full flex items-center text-red-400 hover:text-red-300 transition">
+                                <i class="fas fa-sign-out-alt sidebar-icon mr-3"></i>
+                                <span class="sidebar-text">Sair</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Main Content -->
+                    <div class="flex-1 p-6">
+                        <!-- Dashboard Tab -->
+                        <div id="dashboard" class="tab-content active">
+                            <h3 class="text-2xl font-bold mb-6">Visão Geral</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                                <div class="bg-orange-100 p-6 rounded-lg">
+                                    <div class="flex justify-between items-start">
+                                        <div>
+                                            <p class="text-gray-600">Vendas Hoje</p>
+                                            <h4 class="text-2xl font-bold mt-2">R$ 3.450,00</h4>
+                                        </div>
+                                        <div class="bg-orange-600 text-white p-3 rounded-full">
+                                            <i class="fas fa-chart-line"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-100 p-6 rounded-lg">
+                                    <div class="flex justify-between items-start">
+                                        <div>
+                                            <p class="text-gray-600">Pedidos</p>
+                                            <h4 class="text-2xl font-bold mt-2">24</h4>
+                                        </div>
+                                        <div class="bg-black text-white p-3 rounded-full">
+                                            <i class="fas fa-shopping-bag"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-100 p-6 rounded-lg">
+                                    <div class="flex justify-between items-start">
+                                        <div>
+                                            <p class="text-gray-600">Clientes</p>
+                                            <h4 class="text-2xl font-bold mt-2">156</h4>
+                                        </div>
+                                        <div class="bg-black text-white p-3 rounded-full">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white border border-gray-200 rounded-lg p-6">
+                                <div class="flex justify-between items-center mb-6">
+                                    <h4 class="text-xl font-bold">Últimos Pedidos</h4>
+                                    <a href="#" class="text-orange-600 hover:text-orange-700">Ver Todos</a>
+                                </div>
+                                <div class="overflow-x-auto">
+                                    <table class="min-w-full">
+                                        <thead>
+                                            <tr class="border-b border-gray-200">
+                                                <th class="text-left py-3 px-4">ID</th>
+                                                <th class="text-left py-3 px-4">Cliente</th>
+                                                <th class="text-left py-3 px-4">Valor</th>
+                                                <th class="text-left py-3 px-4">Status</th>
+                                                <th class="text-left py-3 px-4">Ações</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                                <td class="py-3 px-4">#BO-1001</td>
+                                                <td class="py-3 px-4">João Silva</td>
+                                                <td class="py-3 px-4">R$ 599,99</td>
+                                                <td class="py-3 px-4">
+                                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Entregue</span>
+                                                </td>
+                                                <td class="py-3 px-4">
+                                                    <button class="text-orange-600 hover:text-orange-700 mr-2">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                    <button class="text-gray-600 hover:text-gray-800">
+                                                        <i class="fas fa-print"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                                <td class="py-3 px-4">#BO-1000</td>
+                                                <td class="py-3 px-4">Maria Souza</td>
+                                                <td class="py-3 px-4">R$ 1.299,99</td>
+                                                <td class="py-3 px-4">
+                                                    <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Processando</span>
+                                                </td>
+                                                <td class="py-3 px-4">
+                                                    <button class="text-orange-600 hover:text-orange-700 mr-2">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                    <button class="text-gray-600 hover:text-gray-800">
+                                                        <i class="fas fa-print"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                                <td class="py-3 px-4">#BO-999</td>
+                                                <td class="py-3 px-4">Carlos Oliveira</td>
+                                                <td class="py-3 px-4">R$ 349,99</td>
+                                                <td class="py-3 px-4">
+                                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Enviado</span>
+                                                </td>
+                                                <td class="py-3 px-4">
+                                                    <button class="text-orange-600 hover:text-orange-700 mr-2">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                    <button class="text-gray-600 hover:text-gray-800">
+                                                        <i class="fas fa-print"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Products Tab -->
+                        <div id="products" class="tab-content">
+                            <div class="flex justify-between items-center mb-6">
+                                <h3 class="text-2xl font-bold">Gerenciar Produtos</h3>
+                                <button id="add-product-btn" class="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg flex items-center">
+                                    <i class="fas fa-plus mr-2"></i> Adicionar Produto
+                                </button>
+                            </div>
+                            
+                            <!-- Add Product Form (Hidden by default) -->
+                            <div id="add-product-form" class="bg-gray-50 p-6 rounded-lg mb-8 hidden">
+                                <h4 class="text-xl font-bold mb-4">Adicionar Novo Produto</h4>
+                                <form>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label class="block text-gray-700 mb-2">Nome do Produto</label>
+                                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                        </div>
+                                        <div>
+                                            <label class="block text-gray-700 mb-2">Preço</label>
+                                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                        </div>
+                                        <div>
+                                            <label class="block text-gray-700 mb-2">Categoria</label>
+                                            <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                                <option>Eletrônicos</option>
+                                                <option>Roupas</option>
+                                                <option>Casa</option>
+                                                <option>Esportes</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label class="block text-gray-700 mb-2">Estoque</label>
+                                            <input type="number" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                        </div>
+                                        <div class="md:col-span-2">
+                                            <label class="block text-gray-700 mb-2">Descrição</label>
+                                            <textarea class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" rows="3"></textarea>
+                                        </div>
+                                        <div class="md:col-span-2">
+                                            <label class="block text-gray-700 mb-2">Imagem do Produto</label>
+                                            <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
+                                                <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-2"></i>
+                                                <p class="text-gray-500">Arraste e solte a imagem aqui ou clique para selecionar</p>
+                                                <input type="file" class="hidden">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-end space-x-3 mt-6">
+                                        <button type="button" id="cancel-product-btn" class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-100">Cancelar</button>
+                                        <button type="submit" class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-lg">Salvar Produto</button>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            <!-- Products List -->
+                            <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                                <div class="overflow-x-auto">
+                                    <table class="min-w-full">
+                                        <thead>
+                                            <tr class="border-b border-gray-200 bg-gray-50">
+                                                <th class="text-left py-3 px-4">ID</th>
+                                                <th class="text-left py-3 px-4">Produto</th>
+                                                <th class="text-left py-3 px-4">Preço</th>
+                                                <th class="text-left py-3 px-4">Estoque</th>
+                                                <th class="text-left py-3 px-4">Status</th>
+                                                <th class="text-left py-3 px-4">Ações</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                                <td class="py-3 px-4">#P1001</td>
+                                                <td class="py-3 px-4">
+                                                    <div class="flex items-center">
+                                                        <div class="w-10 h-10 bg-gray-200 rounded mr-3 flex items-center justify-center">
+                                                            <i class="fas fa-box-open text-gray-400"></i>
+                                                        </div>
+                                                        <div>
+                                                            <div class="font-medium">Notebook Pro</div>
+                                                            <div class="text-xs text-gray-500">Eletrônicos</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="py-3 px-4">R$ 4.599,99</td>
+                                                <td class="py-3 px-4">15</td>
+                                                <td class="py-3 px-4">
+                                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Ativo</span>
+                                                </td>
+                                                <td class="py-3 px-4">
+                                                    <button class="text-orange-600 hover:text-orange-700 mr-2" title="Editar">
+                                                        <i class="fas fa-edit"></i>
+                                                    </button>
+                                                    <button class="text-red-600 hover:text-red-700 mr-2" title="Desativar">
+                                                        <i class="fas fa-ban"></i>
+                                                    </button>
+                                                    <button class="text-gray-600 hover:text-gray-800" title="Excluir">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                                <td class="py-3 px-4">#P1000</td>
+                                                <td class="py-3 px-4">
+                                                    <div class="flex items-center">
+                                                        <div class="w-10 h-10 bg-gray-200 rounded mr-3 flex items-center justify-center">
+                                                            <i class="fas fa-headphones text-gray-400"></i>
+                                                        </div>
+                                                        <div>
+                                                            <div class="font-medium">Fones de Ouvido</div>
+                                                            <div class="text-xs text-gray-500">Eletrônicos</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="py-3 px-4">R$ 349,99</td>
+                                                <td class="py-3 px-4">42</td>
+                                                <td class="py-3 px-4">
+                                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Ativo</span>
+                                                </td>
+                                                <td class="py-3 px-4">
+                                                    <button class="text-orange-600 hover:text-orange-700 mr-2" title="Editar">
+                                                        <i class="fas fa-edit"></i>
+                                                    </button>
+                                                    <button class="text-red-600 hover:text-red-700 mr-2" title="Desativar">
+                                                        <i class="fas fa-ban"></i>
+                                                    </button>
+                                                    <button class="text-gray-600 hover:text-gray-800" title="Excluir">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                                <td class="py-3 px-4">#P999</td>
+                                                <td class="py-3 px-4">
+                                                    <div class="flex items-center">
+                                                        <div class="w-10 h-10 bg-gray-200 rounded mr-3 flex items-center justify-center">
+                                                            <i class="fas fa-mobile-alt text-gray-400"></i>
+                                                        </div>
+                                                        <div>
+                                                            <div class="font-medium">Smartphone Elite</div>
+                                                            <div class="text-xs text-gray-500">Eletrônicos</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="py-3 px-4">R$ 3.299,99</td>
+                                                <td class="py-3 px-4">0</td>
+                                                <td class="py-3 px-4">
+                                                    <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">Esgotado</span>
+                                                </td>
+                                                <td class="py-3 px-4">
+                                                    <button class="text-orange-600 hover:text-orange-700 mr-2" title="Editar">
+                                                        <i class="fas fa-edit"></i>
+                                                    </button>
+                                                    <button class="text-green-600 hover:text-green-700 mr-2" title="Ativar">
+                                                        <i class="fas fa-check"></i>
+                                                    </button>
+                                                    <button class="text-gray-600 hover:text-gray-800" title="Excluir">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="px-4 py-3 bg-gray-50 border-t border-gray-200 flex justify-between items-center">
+                                    <div class="text-sm text-gray-600">
+                                        Mostrando 1 a 3 de 15 produtos
+                                    </div>
+                                    <div class="flex space-x-1">
+                                        <button class="px-3 py-1 border border-gray-300 rounded hover:bg-gray-100">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <button class="px-3 py-1 border border-gray-300 rounded bg-gray-200">1</button>
+                                        <button class="px-3 py-1 border border-gray-300 rounded hover:bg-gray-100">2</button>
+                                        <button class="px-3 py-1 border border-gray-300 rounded hover:bg-gray-100">3</button>
+                                        <button class="px-3 py-1 border border-gray-300 rounded hover:bg-gray-100">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Services Tab -->
+                        <div id="services" class="tab-content">
+                            <div class="flex justify-between items-center mb-6">
+                                <h3 class="text-2xl font-bold">Gerenciar Serviços</h3>
+                                <button id="add-service-btn" class="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg flex items-center">
+                                    <i class="fas fa-plus mr-2"></i> Adicionar Serviço
+                                </button>
+                            </div>
+                            
+                            <!-- Add Service Form (Hidden by default) -->
+                            <div id="add-service-form" class="bg-gray-50 p-6 rounded-lg mb-8 hidden">
+                                <h4 class="text-xl font-bold mb-4">Adicionar Novo Serviço</h4>
+                                <form>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label class="block text-gray-700 mb-2">Nome do Serviço</label>
+                                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                        </div>
+                                        <div>
+                                            <label class="block text-gray-700 mb-2">Preço</label>
+                                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                        </div>
+                                        <div>
+                                            <label class="block text-gray-700 mb-2">Categoria</label>
+                                            <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                                <option>Entrega</option>
+                                                <option>Garantia</option>
+                                                <option>Suporte</option>
+                                                <option>Instalação</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label class="block text-gray-700 mb-2">Duração</label>
+                                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Ex: 30 dias">
+                                        </div>
+                                        <div class="md:col-span-2">
+                                            <label class="block text-gray-700 mb-2">Descrição</label>
+                                            <textarea class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" rows="3"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-end space-x-3 mt-6">
+                                        <button type="button" id="cancel-service-btn" class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-100">Cancelar</button>
+                                        <button type="submit" class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-lg">Salvar Serviço</button>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            <!-- Services List -->
+                            <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                                <div class="overflow-x-auto">
+                                    <table class="min-w-full">
+                                        <thead>
+                                            <tr class="border-b border-gray-200 bg-gray-50">
+                                                <th class="text-left py-3 px-4">ID</th>
+                                                <th class="text-left py-3 px-4">Serviço</th>
+                                                <th class="text-left py-3 px-4">Preço</th>
+                                                <th class="text-left py-3 px-4">Duração</th>
+                                                <th class="text-left py-3 px-4">Status</th>
+                                                <th class="text-left py-3 px-4">Ações</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                                <td class="py-3 px-4">#S1001</td>
+                                                <td class="py-3 px-4">
+                                                    <div class="flex items-center">
+                                                        <div class="w-10 h-10 bg-gray-200 rounded mr-3 flex items-center justify-center">
+                                                            <i class="fas fa-truck text-gray-400"></i>
+                                                        </div>
+                                                        <div>
+                                                            <div class="font-medium">Entrega Rápida</div>
+                                                            <div class="text-xs text-gray-500">Entrega</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="py-3 px-4">R$ 19,99</td>
+                                                <td class="py-3 px-4">48h</td>
+                                                <td class="py-3 px-4">
+                                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Ativo</span>
+                                                </td>
+                                                <td class="py-3 px-4">
+                                                    <button class="text-orange-600 hover:text-orange-700 mr-2" title="Editar">
+                                                        <i class="fas fa-edit"></i>
+                                                    </button>
+                                                    <button class="text-red-600 hover:text-red-700 mr-2" title="Desativar">
+                                                        <i class="fas fa-ban"></i>
+                                                    </button>
+                                                    <button class="text-gray-600 hover:text-gray-800" title="Excluir">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                                <td class="py-3 px-4">#S1000</td>
+                                                <td class="py-3 px-4">
+                                                    <div class="flex items-center">
+                                                        <div class="w-10 h-10 bg-gray-200 rounded mr-3 flex items-center justify-center">
+                                                            <i class="fas fa-shield-alt text-gray-400"></i>
+                                                        </div>
+                                                        <div>
+                                                            <div class="font-medium">Garantia Estendida</div>
+                                                            <div class="text-xs text-gray-500">Garantia</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="py-3 px-4">R$ 99,99</td>
+                                                <td class="py-3 px-4">1 ano</td>
+                                                <td class="py-3 px-4">
+                                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Ativo</span>
+                                                </td>
+                                                <td class="py-3 px-4">
+                                                    <button class="text-orange-600 hover:text-orange-700 mr-2" title="Editar">
+                                                        <i class="fas fa-edit"></i>
+                                                    </button>
+                                                    <button class="text-red-600 hover:text-red-700 mr-2" title="Desativar">
+                                                        <i class="fas fa-ban"></i>
+                                                    </button>
+                                                    <button class="text-gray-600 hover:text-gray-800" title="Excluir">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                                <td class="py-3 px-4">#S999</td>
+                                                <td class="py-3 px-4">
+                                                    <div class="flex items-center">
+                                                        <div class="w-10 h-10 bg-gray-200 rounded mr-3 flex items-center justify-center">
+                                                            <i class="fas fa-headset text-gray-400"></i>
+                                                        </div>
+                                                        <div>
+                                                            <div class="font-medium">Suporte Premium</div>
+                                                            <div class="text-xs text-gray-500">Suporte</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="py-3 px-4">R$ 49,99/mês</td>
+                                                <td class="py-3 px-4">-</td>
+                                                <td class="py-3 px-4">
+                                                    <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">Inativo</span>
+                                                </td>
+                                                <td class="py-3 px-4">
+                                                    <button class="text-orange-600 hover:text-orange-700 mr-2" title="Editar">
+                                                        <i class="fas fa-edit"></i>
+                                                    </button>
+                                                    <button class="text-green-600 hover:text-green-700 mr-2" title="Ativar">
+                                                        <i class="fas fa-check"></i>
+                                                    </button>
+                                                    <button class="text-gray-600 hover:text-gray-800" title="Excluir">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="px-4 py-3 bg-gray-50 border-t border-gray-200 flex justify-between items-center">
+                                    <div class="text-sm text-gray-600">
+                                        Mostrando 1 a 3 de 8 serviços
+                                    </div>
+                                    <div class="flex space-x-1">
+                                        <button class="px-3 py-1 border border-gray-300 rounded hover:bg-gray-100">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <button class="px-3 py-1 border border-gray-300 rounded bg-gray-200">1</button>
+                                        <button class="px-3 py-1 border border-gray-300 rounded hover:bg-gray-100">2</button>
+                                        <button class="px-3 py-1 border border-gray-300 rounded hover:bg-gray-100">3</button>
+                                        <button class="px-3 py-1 border border-gray-300 rounded hover:bg-gray-100">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Orders Tab -->
+                        <div id="orders" class="tab-content">
+                            <h3 class="text-2xl font-bold mb-6">Pedidos</h3>
+                            <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                                <div class="overflow-x-auto">
+                                    <table class="min-w-full">
+                                        <thead>
+                                            <tr class="border-b border-gray-200 bg-gray-50">
+                                                <th class="text-left py-3 px-4">ID</th>
+                                                <th class="text-left py-3 px-4">Cliente</th>
+                                                <th class="text-left py-3 px-4">Data</th>
+                                                <th class="text-left py-3 px-4">Valor</th>
+                                                <th class="text-left py-3 px-4">Status</th>
+                                                <th class="text-left py-3 px-4">Ações</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                                <td class="py-3 px-4">#BO-1001</td>
+                                                <td class="py-3 px-4">João Silva</td>
+                                                <td class="py-3 px-4">15/06/2023</td>
+                                                <td class="py-3 px-4">R$ 599,99</td>
+                                                <td class="py-3 px-4">
+                                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Entregue</span>
+                                                </td>
+                                                <td class="py-3 px-4">
+                                                    <button class="text-orange-600 hover:text-orange-700 mr-2" title="Detalhes">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                    <button class="text-gray-600 hover:text-gray-800" title="Imprimir">
+                                                        <i class="fas fa-print"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                                <td class="py-3 px-4">#BO-1000</td>
+                                                <td class="py-3 px-4">Maria Souza</td>
+                                                <td class="py-3 px-4">14/06/2023</td>
+                                                <td class="py-3 px-4">R$ 1.299,99</td>
+                                                <td class="py-3 px-4">
+                                                    <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Processando</span>
+                                                </td>
+                                                <td class="py-3 px-4">
+                                                    <button class="text-orange-600 hover:text-orange-700 mr-2" title="Detalhes">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                    <button class="text-gray-600 hover:text-gray-800" title="Imprimir">
+                                                        <i class="fas fa-print"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                                <td class="py-3 px-4">#BO-999</td>
+                                                <td class="py-3 px-4">Carlos Oliveira</td>
+                                                <td class="py-3 px-4">12/06/2023</td>
+                                                <td class="py-3 px-4">R$ 349,99</td>
+                                                <td class="py-3 px-4">
+                                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Enviado</span>
+                                                </td>
+                                                <td class="py-3 px-4">
+                                                    <button class="text-orange-600 hover:text-orange-700 mr-2" title="Detalhes">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                    <button class="text-gray-600 hover:text-gray-800" title="Imprimir">
+                                                        <i class="fas fa-print"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="px-4 py-3 bg-gray-50 border-t border-gray-200 flex justify-between items-center">
+                                    <div class="text-sm text-gray-600">
+                                        Mostrando 1 a 3 de 24 pedidos
+                                    </div>
+                                    <div class="flex space-x-1">
+                                        <button class="px-3 py-1 border border-gray-300 rounded hover:bg-gray-100">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <button class="px-3 py-1 border border-gray-300 rounded bg-gray-200">1</button>
+                                        <button class="px-3 py-1 border border-gray-300 rounded hover:bg-gray-100">2</button>
+                                        <button class="px-3 py-1 border border-gray-300 rounded hover:bg-gray-100">3</button>
+                                        <button class="px-3 py-1 border border-gray-300 rounded hover:bg-gray-100">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Settings Tab -->
+                        <div id="settings" class="tab-content">
+                            <h3 class="text-2xl font-bold mb-6">Configurações</h3>
+                            <div class="bg-white border border-gray-200 rounded-lg p-6">
+                                <form>
+                                    <div class="mb-8">
+                                        <h4 class="text-lg font-semibold mb-4">Informações da Loja</h4>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            <div>
+                                                <label class="block text-gray-700 mb-2">Nome da Loja</label>
+                                                <input type="text" value="BlackOrange" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                            </div>
+                                            <div>
+                                                <label class="block text-gray-700 mb-2">Email</label>
+                                                <input type="email" value="contato@blackorange.com" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                            </div>
+                                            <div>
+                                                <label class="block text-gray-700 mb-2">Telefone</label>
+                                                <input type="text" value="(11) 99999-9999" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                            </div>
+                                            <div>
+                                                <label class="block text-gray-700 mb-2">CNPJ</label>
+                                                <input type="text" value="12.345.678/0001-99" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                            </div>
+                                            <div class="md:col-span-2">
+                                                <label class="block text-gray-700 mb-2">Endereço</label>
+                                                <input type="text" value="Av. Paulista, 1000 - São Paulo/SP" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-8">
+                                        <h4 class="text-lg font-semibold mb-4">Configurações de Pagamento</h4>
+                                        <div class="space-y-4">
+                                            <div class="flex items-center">
+                                                <input type="checkbox" id="credit-card" class="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded" checked>
+                                                <label for="credit-card" class="ml-2 block text-gray-700">Cartão de Crédito</label>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <input type="checkbox" id="boleto" class="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded" checked>
+                                                <label for="boleto" class="ml-2 block text-gray-700">Boleto Bancário</label>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <input type="checkbox" id="pix" class="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded" checked>
+                                                <label for="pix" class="ml-2 block text-gray-700">PIX</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-8">
+                                        <h4 class="text-lg font-semibold mb-4">Configurações de Entrega</h4>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            <div>
+                                                <label class="block text-gray-700 mb-2">Frete Grátis a partir de</label>
+                                                <div class="relative">
+                                                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">R$</span>
+                                                    <input type="text" value="299" class="pl-8 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <label class="block text-gray-700 mb-2">Prazo de Entrega</label>
+                                                <input type="text" value="3-5 dias úteis" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex justify-end">
+                                        <button type="submit" class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-lg">Salvar Configurações</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-fire mr-2 text-orange-500"></i>
+                        <span>Black<span class="text-orange-500">Orange</span></span>
+                    </h3>
+                    <p class="text-gray-400">A melhor experiência em compras online com produtos e serviços de alta qualidade.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition">Início</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-orange-500 transition">Produtos</a></li>
+                        <li><a href="service.html" class="text-gray-400 hover:text-orange-500 transition">Serviços</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-orange-500 transition">Sobre Nós</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Ajuda</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition">Política de Privacidade</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition">Termos de Serviço</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Inscreva-se para receber ofertas exclusivas.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Seu email" class="px-4 py-2 rounded-l-lg focus:outline-none text-black w-full">
+                        <button type="submit" class="bg-orange-600 hover:bg-orange-700 px-4 py-2 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-orange-500 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-orange-500 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-orange-500 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-orange-500 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 BlackOrange. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

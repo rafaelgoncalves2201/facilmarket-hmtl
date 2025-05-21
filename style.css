@@ -1,0 +1,27 @@
+.gradient-bg {
+    background: linear-gradient(135deg, #000000 0%, #FF8C00 100%);
+}
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+.hover-scale:hover {
+    transform: scale(1.03);
+}
+.sidebar {
+    transition: all 0.3s ease;
+}
+.sidebar.collapsed {
+    width: 70px;
+}
+.sidebar.collapsed .sidebar-text {
+    display: none;
+}
+.sidebar.collapsed .sidebar-icon {
+    margin-right: 0;
+}
+.tab-content {
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}
