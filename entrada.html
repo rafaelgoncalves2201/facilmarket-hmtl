@@ -6,32 +6,7 @@
     <title>Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .login-container {
-            background: linear-gradient(135deg, #000000 0%, #FF8C00 100%);
-        }
-        .login-card {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            box-shadow: 0 8px 32px 0 rgba(238, 128, 3, 0.37);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-        }
-        .input-field {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        .input-field:focus {
-            background: rgba(255, 255, 255, 0.2);
-        }
-        .btn-login {
-            transition: all 0.3s ease;
-        }
-        .btn-login:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="min-h-screen flex items-center justify-center p-4 login-container">
     <div class="login-card p-8 w-full max-w-md text-white">
@@ -91,10 +66,10 @@
             </div>
 
             <div class="relative my-6">
-                <div class="absolute inset-0 flex items-center">
+                <div class="absolute inset-0 flex items-top">
                     <div class="w-full border-t border-white border-opacity-30"></div>
                 </div>
-                <div class="relative flex justify-center"> 
+                <div class="relative flex justify-center "> 
                     <a href="index.html" class="font-semibold hover:underline">voltar ao inicio </a>
                 </div>
             </div>
@@ -113,18 +88,6 @@
         </form>
     </div>
 
-    <script>
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            
-            // Aqui você adicionaria a lógica de autenticação
-            console.log('Login attempt:', { email, password });
-            
-            // Simulação de login bem-sucedido
-            alert('Login realizado com sucesso!');
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

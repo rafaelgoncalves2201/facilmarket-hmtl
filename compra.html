@@ -24,7 +24,7 @@
                 <a href="index.html"class="hover:text-orange-300 transition">Inicio</a>
                 <a href="products.html" class="hover:text-orange-300 transition">Produtos</a>
                 <a href="service.html" class="hover:text-orange-300 transition">Serviços</a>
-                <a href="about.html" class="hover:text-orange-300 transition">Sobre Nós</a>
+                <a href="index.html#about" class="hover:text-orange-300 transition">Sobre Nós</a>
                 <a href="vendedor.html" class="bg-orange-600 px-4 py-2 rounded-lg hover:bg-orange-700 transition">Painel do Vendedor</a>
             </div>
 
@@ -46,7 +46,7 @@
         <div class="md:hidden hidden bg-black py-2 px-4" id="mobile-menu">
             <a href="products.html" class="block py-2 hover:text-orange-300 transition">Produtos</a>
             <a href="service.htm" class="block py-2 hover:text-orange-300 transition">Serviços</a>
-            <a href="about.html" class="block py-2 hover:text-orange-300 transition">Sobre Nós</a>
+            <a href="index.html#about" class="block py-2 hover:text-orange-300 transition">Sobre Nós</a>
             <a href="vendedor.html" class="block py-2 bg-orange-600 px-4 rounded-lg hover:bg-orange-700 transition">Painel do Vendedor</a>
         </div>
     </nav>
@@ -89,11 +89,11 @@
 
                     <div class="mt-6">
                         <div class="flex items-center text-gray-700">
-                            <i class="fas fa-truck text-blue-500 mr-2"></i>
+                            <i class="fas fa-truck text-orange-500 mr-2"></i>
                             <span>Frete grátis para todo Brasil</span>
                         </div>
                         <div class="flex items-center mt-2 text-gray-700">
-                            <i class="fas fa-box-open text-blue-500 mr-2"></i>
+                            <i class="fas fa-box-open text-orange-500 mr-2"></i>
                             <span>Disponível em estoque</span>
                         </div>
                     </div>
@@ -101,9 +101,9 @@
                     <div class="mt-8">
                         <h3 class="text-lg font-semibold text-gray-800">Cor:</h3>
                         <div class="flex mt-2 space-x-2">
-                            <button class="w-8 h-8 rounded-full bg-gray-800 border-2 border-gray-300 focus:ring-2 focus:ring-blue-500"></button>
-                            <button class="w-8 h-8 rounded-full bg-blue-500 border-2 border-gray-300 focus:ring-2 focus:ring-blue-500"></button>
-                            <button class="w-8 h-8 rounded-full bg-red-500 border-2 border-gray-300 focus:ring-2 focus:ring-blue-500"></button>
+                            <button class="w-8 h-8 rounded-full bg-gray-800 border-2 border-gray-300 focus:ring-2 focus:ring-orange-500"></button>
+                            <button class="w-8 h-8 rounded-full bg-orange-500 border-2 border-gray-300 focus:ring-2 focus:ring-orange-500"></button>
+                            <button class="w-8 h-8 rounded-full bg-red-500 border-2 border-gray-300 focus:ring-2 focus:ring-orange-500"></button>
                         </div>
                     </div>
 
@@ -122,7 +122,7 @@
                     </div>
 
                     <div class="mt-8 space-y-3">
-                        <button class="add-to-cart w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-semibold flex items-center justify-center">
+                        <button class="add-to-cart w-full bg-orange-600 hover:bg-orange-700 text-white py-3 px-6 rounded-lg font-semibold flex items-center justify-center">
                             <i class="fas fa-shopping-cart mr-2"></i> Adicionar ao carrinho
                         </button>
                         <button class="w-full bg-gray-900 hover:bg-gray-800 text-white py-3 px-6 rounded-lg font-semibold flex items-center justify-center">
@@ -269,57 +269,64 @@
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const quantityInput = document.getElementById('quantity');
-            const decreaseBtn = document.getElementById('decrease');
-            const increaseBtn = document.getElementById('increase');
-            const addToCartBtn = document.querySelector('.add-to-cart');
-
-            // Quantity controls
-            decreaseBtn.addEventListener('click', function() {
-                let value = parseInt(quantityInput.value);
-                if (value > 1) {
-                    quantityInput.value = value - 1;
-                }
-            });
-
-            increaseBtn.addEventListener('click', function() {
-                let value = parseInt(quantityInput.value);
-                if (value < 10) {
-                    quantityInput.value = value + 1;
-                }
-            });
-
-            // Add to cart animation
-            addToCartBtn.addEventListener('click', function() {
-                const quantity = parseInt(quantityInput.value);
-                const productName = document.querySelector('h1').textContent;
-                const price = document.querySelector('.text-4xl').textContent;
-
-                // Animation effect
-                addToCartBtn.innerHTML = '<i class="fas fa-check mr-2"></i> Adicionado!';
-                addToCartBtn.classList.remove('bg-blue-600', 'hover:bg-blue-700');
-                addToCartBtn.classList.add('bg-green-500', 'hover:bg-green-600');
-
-                setTimeout(() => {
-                    addToCartBtn.innerHTML = '<i class="fas fa-shopping-cart mr-2"></i> Adicionar ao carrinho';
-                    addToCartBtn.classList.remove('bg-green-500', 'hover:bg-green-600');
-                    addToCartBtn.classList.add('bg-blue-600', 'hover:bg-blue-700');
-                }, 2000);
-
-                // In a real app, you would send this data to your backend
-                console.log(`Produto: ${productName}, Quantidade: ${quantity}, Preço: ${price}`);
-            });
-
-            // Color selection
-            const colorButtons = document.querySelectorAll('button.w-8.h-8');
-            colorButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    colorButtons.forEach(btn => btn.classList.remove('ring-2', 'ring-blue-500'));
-                    this.classList.add('ring-2', 'ring-blue-500');
-                });
-            });
-        });
-    </script>
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-fire mr-2 text-orange-500"></i>
+                        <span>Facil<span class="text-orange-500">Market</span></span>
+                    </h3>
+                    <p class="text-gray-400">A melhor experiência em compras online com produtos e serviços de alta qualidade.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition">Início</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-orange-500 transition">Produtos</a></li>
+                        <li><a href="service.html" class="text-gray-400 hover:text-orange-500 transition">Serviços</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-orange-500 transition">Sobre Nós</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Ajuda</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition">Política de Privacidade</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition">Termos de Serviço</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Inscreva-se para receber ofertas exclusivas.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Seu email" class="px-4 py-2 rounded-l-lg focus:outline-none text-black w-full">
+                        <button type="submit" class="bg-orange-600 hover:bg-orange-700 px-4 py-2 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-orange-500 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-orange-500 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-orange-500 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-orange-500 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 FacilMarket. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+<script src="script.js"></script>
 </body>

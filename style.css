@@ -25,3 +25,51 @@
 .tab-content.active {
     display: block;
 }
+.login-container {
+            background: linear-gradient(135deg, #000000 0%, #FF8C00 100%);
+        }
+        .login-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(238, 128, 3, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        .input-field {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .input-field:focus {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .btn-login {
+            transition: all 0.3s ease;
+        }
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+/* Estilos personalizados */
+        .cart-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .quantity-btn {
+            transition: all 0.2s ease;
+        }
+        .quantity-btn:hover {
+            background-color: #e5e7eb;
+        }
+        .remove-btn:hover {
+            color: #ef4444;
+        }
+        .checkout-btn:hover {
+            background-color: rgba(238, 128, 3, 0.37);
+        }
+        .empty-cart {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
