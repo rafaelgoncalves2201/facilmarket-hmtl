@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .login-container {
+            background: linear-gradient(135deg, #000000 0%, #FF8C00 100%);
+        }
+        .login-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(238, 128, 3, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        .input-field {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .input-field:focus {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .btn-login {
+            transition: all 0.3s ease;
+        }
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 login-container">
+    <div class="login-card p-8 w-full max-w-md text-white">
+        <div class="text-center mb-8">
+            <i class="fas fa-user-circle text-5xl mb-4"></i>
+            <h1 class="text-3xl font-bold">Bem-vindo de volta</h1>
+            <p class="opacity-80">Faça login para acessar sua conta</p>
+        </div>
+
+        <form class="space-y-6">
+            <div>
+                <label for="email" class="block mb-2 font-medium">E-mail</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fas fa-envelope opacity-70"></i>
+                    </div>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        class="w-full pl-10 pr-3 py-3 rounded-lg input-field focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50" 
+                        placeholder="seu@email.com"
+                        required
+                    >
+                </div>
+            </div>
+
+            <div>
+                <label for="password" class="block mb-2 font-medium">Senha</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fas fa-lock opacity-70"></i>
+                    </div>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        class="w-full pl-10 pr-3 py-3 rounded-lg input-field focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50" 
+                        placeholder="••••••••"
+                        required
+                    >
+                </div>
+                <div class="flex justify-end mt-2">
+                    <a href="#" class="text-sm opacity-80 hover:opacity-100 hover:underline">Esqueceu a senha?</a>
+                </div>
+            </div>
+
+            <button 
+                type="submit" 
+                class="w-full bg-white text-indigo-600 py-3 px-4 rounded-lg font-semibold btn-login hover:bg-opacity-90"
+            >
+                Entrar
+            </button>
+
+            <div class="text-center mt-6">
+                <p class="opacity-80">Não tem uma conta? 
+                    <a href="#" class="font-semibold hover:underline">Cadastre-se</a>
+                </p>
+            </div>
+
+            <div class="relative my-6">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-white border-opacity-30"></div>
+                </div>
+                <div class="relative flex justify-center"> 
+                    <a href="index.html" class="font-semibold hover:underline">voltar ao inicio </a>
+                </div>
+            </div>
+
+            <div class="flex justify-center space-x-4">
+                <button type="button" class="p-3 rounded-full bg-white bg-opacity-10 hover:bg-opacity-20">
+                    <i class="fab fa-google text-white"></i>
+                </button>
+                <button type="button" class="p-3 rounded-full bg-white bg-opacity-10 hover:bg-opacity-20">
+                    <i class="fab fa-facebook-f text-white"></i>
+                </button>
+                <button type="button" class="p-3 rounded-full bg-white bg-opacity-10 hover:bg-opacity-20">
+                    <i class="fab fa-apple text-white"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Aqui você adicionaria a lógica de autenticação
+            console.log('Login attempt:', { email, password });
+            
+            // Simulação de login bem-sucedido
+            alert('Login realizado com sucesso!');
+        });
+    </script>
+</body>
+</html>
